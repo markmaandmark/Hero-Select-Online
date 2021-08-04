@@ -1,6 +1,6 @@
 package utils;
 /**
- * Args分离函数
+ * 分离函数
  * 将用户输入的带逗号的查询方式分离到数组中去
  * 例子:“刘备,曹操”->dividedName[0]="刘备",dividedName[1]="曹操"
  * 例子:“ID,attackValue”->dividedProperties[0]="ID",dividedName[1]="attackValue"

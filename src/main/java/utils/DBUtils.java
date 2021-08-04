@@ -7,7 +7,11 @@ import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
-//controller层调用 service层， service层在调用dao层；dao层处理完数据返回 service层， service层在返回controller层，controller层最终返回前端。
+/**
+ * 数据库管理工具类
+ * @author markma
+ * @date 修改时间:2021年8月4日 上午9:18:44
+ */
 public class DBUtils
 {
 	public static SqlSession getConnection()
@@ -15,15 +19,18 @@ public class DBUtils
 		SqlSession session = null;
 		try 
 		{
+			/**
+			 * 1.加载连接
+			 */
 	        SqlSessionFactory factory = new SqlSessionFactoryBuilder()
 	                .build(Resources.getResourceAsReader("utils/config.xml"));
-
-	        // 一次会话
-	        // Connection
+	        /**
+	         * 2.进行一次会话
+	         * 获得了接口的一个具体实现（实例）
+	         * mybatis 根据注解创建了接口的实例
+	         */
 	        session = factory.openSession();
 	        
-	        // 获得了接口的一个具体实现（实例）
-	        // mybatis 根据注解创建了接口的实例
 
 	    } 
 		catch (IOException e) 
